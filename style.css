@@ -1,10 +1,17 @@
 /* --- CSS VARIABLES --- */
 :root {
-    --dark-bg: #121212;
-    --dark-surface: #1E1E1E;
-    --gold: #D4AF37;
-    --gold-hover: #C5A028;
-    --text-dark: #333333;
+    /* Brand colors: dark blue, light blue, white */
+    --brand-dark: #0B3D91;
+    /* primary dark blue */
+    --brand-dark-hover: #0E4EA8;
+    /* hover shade */
+    --brand-light: #BEE6FF;
+    /* light / accent blue */
+    --dark-bg: var(--brand-dark);
+    --dark-surface: #08294f;
+    /* slightly different dark surface */
+    --text-dark: #102A43;
+    /* dark text on white backgrounds */
     --text-light: #F4F4F4;
     --white: #FFFFFF;
     --gray-bg: #F9F9F9;
@@ -27,15 +34,27 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 1rem;
 }
 
-a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
-img { max-width: 100%; height: auto; }
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 .container {
     width: 90%;
@@ -67,12 +86,12 @@ img { max-width: 100%; height: auto; }
 }
 
 .btn-primary {
-    background-color: var(--gold);
-    color: var(--dark-bg);
+    background-color: var(--brand-dark);
+    color: var(--white);
 }
 
 .btn-primary:hover {
-    background-color: var(--gold-hover);
+    background-color: var(--brand-dark-hover);
 }
 
 .btn-secondary {
@@ -105,7 +124,7 @@ img { max-width: 100%; height: auto; }
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
@@ -122,7 +141,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .logo span {
-    color: var(--gold);
+    color: var(--brand-light);
 }
 
 .nav-links {
@@ -131,7 +150,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .nav-links a:hover {
-    color: var(--gold);
+    color: var(--brand-light);
 }
 
 .header-cta .phone-btn {
@@ -167,8 +186,12 @@ img { max-width: 100%; height: auto; }
 
 .hero-overlay {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(18, 18, 18, 0.85); /* Dark overlay */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 18, 18, 0.85);
+    /* Dark overlay */
     z-index: 1;
 }
 
@@ -180,7 +203,7 @@ img { max-width: 100%; height: auto; }
 
 .hero-content h1 {
     font-size: 3rem;
-    color: var(--gold);
+    color: var(--brand-light);
 }
 
 .hero-content p {
@@ -202,13 +225,25 @@ img { max-width: 100%; height: auto; }
 }
 
 /* --- LAYOUT SECTIONS --- */
-.section-light, .section-gray, .section-dark {
+.section-light,
+.section-gray,
+.section-dark {
     padding: 5rem 0;
 }
 
-.section-gray { background-color: var(--gray-bg); }
-.section-dark { background-color: var(--dark-bg); color: var(--text-light); }
-.section-title { text-align: center; margin-bottom: 3rem; }
+.section-gray {
+    background-color: var(--gray-bg);
+}
+
+.section-dark {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
 
 /* Grid System */
 .grid {
@@ -222,11 +257,18 @@ img { max-width: 100%; height: auto; }
     background: var(--white);
     padding: 2rem;
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    color: var(--text-dark);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+    .stars {
+        color: #D4AF37;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
 }
 
-.service-card h3 { color: var(--dark-bg); }
+.service-card h3 {
+    color: var(--dark-bg);
+}
 
 /* --- ABOUT SECTION --- */
 .about-list li {
@@ -234,17 +276,26 @@ img { max-width: 100%; height: auto; }
     padding-left: 20px;
     position: relative;
 }
+
 .about-list li::before {
     content: '✓';
-    color: var(--gold);
+    color: var(--brand-light);
     position: absolute;
     left: 0;
     font-weight: bold;
 }
 
 /* --- REVIEWS --- */
-.stars { color: var(--gold); font-size: 1.5rem; margin-bottom: 1rem; }
-.review-card p { font-style: italic; margin-bottom: 1rem; }
+.stars {
+    color: var(--brand-dark);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.review-card p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
 
 /* --- CONTACT --- */
 .contact-grid {
@@ -254,18 +305,30 @@ img { max-width: 100%; height: auto; }
     margin-bottom: 3rem;
 }
 
-.huge-phone h3 { color: var(--dark-bg); }
+.huge-phone h3 {
+    color: var(--dark-bg);
+}
+
 .huge-phone a {
     font-size: 2.5rem;
     font-weight: 800;
-    color: var(--gold);
+    color: var(--brand-dark);
     display: block;
     margin-bottom: 1.5rem;
 }
 
-.form-group { margin-bottom: 1.5rem; }
-.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
-.form-group input, .form-group select {
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -294,8 +357,10 @@ footer {
 
 /* --- RESPONSIVE / MOBILE-FIRST --- */
 @media (max-width: 768px) {
-    .hamburger { display: block; }
-    
+    .hamburger {
+        display: block;
+    }
+
     .nav-links {
         position: fixed;
         left: -100%;
@@ -305,18 +370,40 @@ footer {
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
         padding: 2rem 0;
     }
 
-    .nav-links.active { left: 0; }
-    .nav-links li { margin: 1.5rem 0; }
-    .header-cta { display: none; /* Hide button on mobile nav to save space, rely on hero button */ }
+    .nav-links.active {
+        left: 0;
+    }
 
-    .hero-content h1 { font-size: 2.2rem; }
-    .hero-buttons { flex-direction: column; }
-    .btn-large { width: 100%; }
-    
-    .contact-grid { grid-template-columns: 1fr; }
-    .huge-phone a { font-size: 2rem; }
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+
+    .header-cta {
+        display: none;
+        /* Hide button on mobile nav to save space, rely on hero button */
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn-large {
+        width: 100%;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .huge-phone a {
+        font-size: 2rem;
+    }
 }
