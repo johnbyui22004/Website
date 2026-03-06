@@ -176,7 +176,8 @@ img {
 /* --- HERO SECTION --- */
 #hero {
     position: relative;
-    background: url('https://images.unsplash.com/photo-1600577916048-804c9191e36c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    /* Local hero image */
+    background: url('img/ImageCard-mobile-van.avif') center/cover no-repeat;
     height: 85vh;
     min-height: 600px;
     display: flex;
