@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 chip: 'Rock Chip Repair',
                 replacement: 'Windshield Replacement',
                 mobile: 'Mobile Service',
+                tint: 'Window Tinting',
                 calibration: 'ADAS Calibration',
                 other: 'Other / Not Sure'
             };
