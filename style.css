@@ -140,6 +140,27 @@ img {
     color: var(--white);
 }
 
+/* Header logo image + text alignment */
+.logo a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    height: 52px;
+    /* increased slightly for better visibility */
+    width: auto;
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 44px;
+        /* slightly smaller on mobile */
+    }
+}
+
 .logo span {
     color: var(--brand-light);
 }
