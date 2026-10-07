@@ -38,36 +38,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Simple Form Validation & Handling ---
+    // --- Lightweight Netlify form submit handling ---
     const leadForm = document.getElementById('lead-form');
 
     if (leadForm) {
-        leadForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Prevent page reload
-
-            // Gather values
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const service = document.getElementById('service').value;
-
-            // Map select values to readable service names for user-friendly messaging
-            const serviceMap = {
-                chip: 'Rock Chip Repair',
-                replacement: 'Windshield Replacement',
-                mobile: 'Mobile Service',
-                tint: 'Window Tinting',
-                calibration: 'ADAS Calibration',
-                other: 'Other / Not Sure'
-            };
-            const readableService = serviceMap[service] || service;
-
-            // Basic Validation Check (HTML5 required attribute handles most of it)
-            if (name && phone && service) {
-                // Simulate sending data
-                alert(`Thanks, ${name}! Your request for ${readableService} has been received. We will call you at ${phone} shortly to confirm your quote.`);
-                leadForm.reset();
-            } else {
-                alert('Please fill out all fields so we can provide an accurate quote.');
+        leadForm.addEventListener('submit', () => {
+            // Disable the submit button and show sending state. Do NOT prevent default submission.
+            const submitBtn = leadForm.querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
             }
         });
     }

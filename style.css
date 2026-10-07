@@ -156,8 +156,8 @@ img {
 
 @media (max-width: 768px) {
     .logo-img {
-        height: 44px;
-        /* slightly smaller on mobile */
+        height: 36px;
+        /* smaller on mobile so the header/logo fits */
     }
 }
 
@@ -197,8 +197,10 @@ img {
 /* --- HERO SECTION --- */
 #hero {
     position: relative;
-    /* Local hero image */
-    background: url('img/DSC02612.jpg') center/cover no-repeat;
+    /* Hero background: use work photo with a dark overlay for readable text */
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('img/work.jpg') center/cover no-repeat;
+    background-size: cover;
+    background-position: center;
     height: 85vh;
     min-height: 600px;
     display: flex;
@@ -425,6 +427,28 @@ footer {
         margin: 1.5rem 0;
     }
 
+    /* Smaller header on mobile; hide the inline logo text so only the image remains */
+    .header-container {
+        height: 64px;
+        align-items: center;
+        gap: 8px;
+    }
+
+    /* hide textual logo on mobile - keep image visible
+       accessible name is provided via aria-label on the anchor */
+    .logo a {
+        font-size: 0;
+    }
+
+    .logo span {
+        display: none;
+    }
+
+    /* Ensure mobile nav sits below the reduced header */
+    .nav-links {
+        top: 64px;
+    }
+
     .header-cta {
         display: none;
         /* Hide button on mobile nav to save space, rely on hero button */
@@ -450,3 +474,5 @@ footer {
         font-size: 2rem;
     }
 }
+
+/* (removed compact-label rule; logo text is hidden for <=768px via main mobile rules) */
